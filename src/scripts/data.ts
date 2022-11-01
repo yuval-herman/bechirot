@@ -1,8 +1,10 @@
+import { Data } from "../types";
+
 export const HEADERS = [
 	"סמל ועדה",
 	"שם ישוב",
 	"סמל ישוב",
-	"בזב", //בעלי זכות בחירה
+	"בעלי זכות בחירה", //בעלי זכות בחירה
 	"מצביעים",
 	"פסולים",
 	"כשרים",
@@ -46,8 +48,6 @@ export const HEADERS = [
 	"שס",
 	"ת",
 ];
-
-export type Data = string[][];
 
 export function getColumn(data: Data, row: number): string[] {
 	return data.map((line) => line[row]);
