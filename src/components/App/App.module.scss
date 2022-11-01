@@ -1,0 +1,13 @@
+.main {
+	--vote-percent: 0;
+	background-color: #16213e;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	.vote-bar {
+		width: var(--vote-percent);
+		background-color: #e94560;
+		padding: 0.3rem;
+	}
+}
