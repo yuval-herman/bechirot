@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Pie, PieChart, Tooltip } from "recharts";
+import { Pie, PieChart, Tooltip, Legend } from "recharts";
 import { Data, getColumn, HEADERS } from "../../scripts/data";
 import { RechartsDataType } from "../../types";
 
@@ -17,10 +17,9 @@ export default function VoteDistribution(props: { data: Data }) {
 		}
 		return votes;
 	}, [props.data]);
-	console.log(voteDistribution);
 
 	return (
-		<PieChart width={730} height={250}>
+		<PieChart width={400} height={400}>
 			<Pie
 				data={voteDistribution}
 				dataKey="value"
@@ -30,6 +29,7 @@ export default function VoteDistribution(props: { data: Data }) {
 				outerRadius={50}
 				fill="#8884d8"
 			/>
+			<Legend />
 			<Tooltip />
 		</PieChart>
 	);
