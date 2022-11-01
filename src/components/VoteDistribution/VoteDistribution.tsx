@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { Pie, PieChart, Tooltip, Legend } from "recharts";
 import { Data, getColumn, HEADERS } from "../../scripts/data";
+import { randomColor } from "../../scripts/helpers";
 import { RechartsDataType } from "../../types";
 
 export default function VoteDistribution(props: { data: Data }) {
@@ -13,6 +14,7 @@ export default function VoteDistribution(props: { data: Data }) {
 					(p, c) => p + (Number(c) || 0),
 					0
 				),
+				fill: randomColor(),
 			});
 		}
 		return votes;
@@ -27,7 +29,7 @@ export default function VoteDistribution(props: { data: Data }) {
 				cx="50%"
 				cy="50%"
 				outerRadius={50}
-				fill="#8884d8"
+				legendType="circle"
 			/>
 			<Legend />
 			<Tooltip />
