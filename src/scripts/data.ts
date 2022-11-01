@@ -47,7 +47,7 @@ export const HEADERS = [
 	"ת",
 ];
 
-type Data = string[][];
+export type Data = string[][];
 
 export function getColumn(data: Data, row: number): string[] {
 	return data.map((line) => line[row]);

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { canVoteNumber, voted } from "../../script/data";
+import { canVoteNumber, Data, voted } from "../../scripts/data";
+import VoteDistribution from "../VoteDistribution/VoteDistribution";
 import style from "./App.module.scss";
 
 function App() {
-	const [data, setData] = useState<string[][]>();
+	const [data, setData] = useState<Data>();
 	const voteBarRef = useRef<HTMLDivElement>(null);
 	const votePercent = useMemo<number | undefined>(() => {
 		if (!data) return;
@@ -35,6 +36,7 @@ function App() {
 			<div ref={voteBarRef} className={style["vote-bar"]}>
 				אחוז המצביעים {votePercent?.toPrecision(3)}%
 			</div>
+			<VoteDistribution data={data} />
 		</div>
 	);
 }
