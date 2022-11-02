@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Pie, PieChart, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { getColumn, HEADERS } from "../../scripts/data";
+import { getColumn, HEADERS, NAMES } from "../../scripts/data";
 import { randomColor } from "../../scripts/helpers";
 import { Data, DataComponentProps, PieData } from "../../types";
 
@@ -9,7 +9,7 @@ export default function VoteDistribution(props: DataComponentProps) {
 		const votes: PieData[] = [];
 		for (let i = 7; i < HEADERS.length; i++) {
 			votes.push({
-				name: HEADERS[i],
+				name: NAMES.get(HEADERS[i])!,
 				value: getColumn(props.data, i).reduce(
 					(p, c) => p + (Number(c) || 0),
 					0
@@ -39,6 +39,7 @@ export default function VoteDistribution(props: DataComponentProps) {
 					wrapperStyle={{
 						padding: "0 2rem",
 						height: "80%",
+						maxWidth: "30%",
 						overflow: "auto",
 						direction: "ltr",
 					}}
