@@ -32,7 +32,17 @@ export default function VoteDistribution(props: DataComponentProps) {
 					outerRadius={50}
 					legendType="circle"
 				/>
-				<Legend />
+				<Legend
+					align="right"
+					verticalAlign="middle"
+					layout="vertical"
+					wrapperStyle={{
+						padding: "0 2rem",
+						height: "80%",
+						overflow: "auto",
+						direction: "ltr",
+					}}
+				/>
 				<Tooltip />
 			</PieChart>
 		</ResponsiveContainer>

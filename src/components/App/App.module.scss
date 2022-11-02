@@ -1,14 +1,21 @@
+@use "../../global.scss";
 .main {
 	--vote-percent: 0;
-	background-color: #16213e;
-	width: 100vw;
 	height: 100vh;
-	margin: 0;
-	padding: 0;
 	.vote-bar {
 		width: var(--vote-percent);
 		background-color: #e94560;
 		padding: 0.3rem;
+	}
+	.cards {
+		padding: 1rem;
+		margin: 1rem;
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		& > * {
+			flex-grow: 1;
+		}
 	}
 	.charts {
 		width: 100%;
